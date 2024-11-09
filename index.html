@@ -46,7 +46,7 @@
 
     <footer class="footer">
         <article>
-            
+            yo
         </article>
         <section>
             yo
@@ -54,20 +54,46 @@
         <aside>
             yo
         </aside>
-        <footer>
-            <div></div>
-        </footer>
+        <footer></footer>
     </footer>
 
 
-    <div class="modal" id="modal">
+    <div id="payment-modal">
         <section class="modal-content">
-
+            <div class="inputPage flex">
+                <article>
+                    <section id="pizza-table">
+                        <div class="loader"></div>
+                        <p>Loading pizzas...</p>
+                    </section>
+                </article>
+                <footer class="flex right">
+                    <button disabled class="nextButton">></button>
+                </footer>
+            
+            </div>
+            <div class="summaryPage">
+                <article>
+                    <section id="pizza-result-table">
+                        <div class="loader"></div>
+                        <p>Loading pizzas...</p>
+                    </section>
+                </article>
+            </div>
+            <div class="paymentPage">
+                Payment
+            </div>
+            <div class="confirmationPage">
+                Wait for confirmation
+            </div>
+            
         </section>
     </div>
 
 </body>
-<script src="./js/paymentModal.js"></script>
+
 <script src="./js/pizzaCard.js"></script>
+<script src="./js/paymentModal.js"></script>
+
 
 </html>
