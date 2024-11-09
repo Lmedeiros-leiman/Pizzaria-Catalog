@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,22 +8,66 @@
     <link rel="icon" href="./assets/favicon.png">
     <link rel="stylesheet" href="./css/light/main.css">
 </head>
+
 <body>
     <header>
         <div class="warning">
             Images are for demonstration purposes only and AI generated.
         </div>
-        <h1 id="brand">The Pizza Corner</h1>
-        <h2>You already know its the best.</h2>
+        <section class="brand">
+            <h1 id="brand">The Pizza Corner</h1>
+            <p>You already know its the best.</p>
+        </section>
+        <aside>
+            <button id="order" class="order">
+                <img src="./assets/icons/delivery.svg" style="width: 24px; height: 24px;" alt="deliveryIcon" />
+                <span>Order online</span>
+            </button>
+            <footer>
+                <div style="display: flex; justify-content: center; align-items: center; gap: 8px;">
+                    <span>
+                        <img src="./assets/icons/phone.png" width="24px" height="24px" />
+                    </span>
+                    <span>
+                        99 99 9999-9999
+                    </span>
+                </div>
+            </footer>
+        </aside>
+
     </header>
     <article>
-        <h2>Have a loook around.</h2>
+        <h2 style="text-align: center;">Have a look around!</h2>
         <section id="pizza-cards">
             <div class="loader"></div>
             <p>Loading pizzas...</p>
         </section>
     </article>
+
+    <footer class="footer">
+        <article>
+            
+        </article>
+        <section>
+            yo
+        </section>
+        <aside>
+            yo
+        </aside>
+        <footer>
+            <div></div>
+        </footer>
+    </footer>
+
+
+    <div class="modal" id="modal">
+        <section class="modal-content">
+
+        </section>
+    </div>
+
 </body>
-    <script src="./js/theme.js"></script>
-    <script src="./js/pizzaCard.js"></script>
+<script src="./js/paymentModal.js"></script>
+<script src="./js/pizzaCard.js"></script>
+
 </html>
