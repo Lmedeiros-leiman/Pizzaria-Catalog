@@ -1,0 +1,16 @@
+
+
+#pizza-cards {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 1rem;
+    justify-content: center;
+
+}
+.card {
+    flex-grow: 1;
+    width: 300px;
+    padding: 8px 4px;
+    background-color: red;
+}
