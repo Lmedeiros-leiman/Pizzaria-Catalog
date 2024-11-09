@@ -1,7 +1,106 @@
-@import url("./root.css");
 @import url("./reseter.css");
 @import url("./loader.css");
 @import url("./card.css");
 
+:root {
+    --primary-color: #652020;
+    --secondary-color: #e08585;
+    --accent-color: #bc2424;
+    --background-color: #fdfbfb;
+    --text-color: #090404;
 
 
+}
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+header {
+    display: flex;
+    flex-grow: 1;
+    flex-wrap: wrap;
+    position: relative;
+    text-align: center;
+}
+header > * {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+header h1 {
+    color: var(--primary-color);
+}
+
+.brand{
+    margin-top: 36px;
+    margin-bottom: 42px;
+}
+.brand h1 {
+    font-size: 2rem;
+}
+
+.warning {
+    color: white;
+    padding: 8px;
+    flex-grow: 1;
+    width: 100%;
+    background-color: red;
+    text-align: center;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+}
+
+
+button.order {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    padding-inline: 8px;
+    font-size: 1.4rem;
+    margin-bottom: 4px;
+    
+    border: none;
+    background-color: var(--accent-color);
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+    
+    padding: 4px 8px;
+    border-radius: 16px;
+    cursor: pointer;
+
+    color: var(--background-color);
+    transition: background-color 0.1s ease;
+}
+button.order img {
+    filter: invert(1);
+}
+
+button.order:hover {
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+}
+button.order:hover img{
+    filter: none;
+}
+
+
+.footer {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    padding-top: 8px;
+    margin-top: 24px;
+}
+.footer > * {
+    flex-grow: 1;
+}
+.footer footer {
+    margin-top: 8px;
+    width: 100%;
+    height: 4px;
+    background-color: var(--accent-color);
+}
