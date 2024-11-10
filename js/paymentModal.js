@@ -24,14 +24,14 @@ function subtractPizza(pizzaName) {
         }
         updatePizzaCounter(pizzaName);
     }
-    
+
     if (Object.keys(selectedPizzas).length === 0) {
         const modal = document.querySelector("#payment-modal");
         const modalContent = modal.querySelector(".modal-content");
-        modalContent.scrollTo(0,0);
+        modalContent.scrollTo(0, 0);
         const firstPageButton = modalContent.querySelector(".nextButton");
         firstPageButton.setAttribute("disabled", true);
-        
+
     }
 
 }
@@ -42,13 +42,28 @@ function updatePizzaCounter(pizzaName) {
 }
 
 function createShowSelectedPizzaTable(element) {
-    
-    element.innerHTML = JSON.stringify(selectedPizzas)
+
+    element.innerHTML = Object.keys(selectedPizzas).map(pizza => {
+        const selectedPizza = pizzas.find(p => p.name === pizza);
+        console.log(selectedPizza)
+        return `
+        <section class="flex">
+            <div>
+            <h3>${selectedPizza.name}</h3>
+            <p>${selectedPizza.description}</p>
+            ${selectedPizza.ingredients.join(", ")}
+            </div>
+            <div style="text-align: center;">
+            <div class="circled"> 
+                <span>${selectedPizzas[pizza]}</span>
+            </div>
+        </section>
+        `}).join("");
 }
 
 function createPizzaTable(element) {
-    
-    element.innerHTML = pizzas.map(pizza => {return `
+    element.innerHTML = pizzas.map(pizza => {
+        return `
         <section class="flex">
             <div>
             <h3>${pizza.name}</h3>
@@ -60,14 +75,12 @@ function createPizzaTable(element) {
                     <button onclick="addPizza('${pizza.name}')" >+</button>
                     <button onclick="subtractPizza('${pizza.name}')">-</button>
                 </div>
-                
                 <div id="count-${pizza.name}">0</div>
             </div>
         </section>
-        
         `
     }).join("");
-    
+
 
 
 }
@@ -75,7 +88,7 @@ function createPizzaTable(element) {
 
 
 function createCloseButton(page) {
-    
+
 }
 
 
@@ -85,10 +98,10 @@ function configFirstPage() {
 
     createPizzaTable(page.querySelector("#pizza-table"));
 
-    
+
     const nextButton = page.querySelector(".nextButton")
     nextButton.addEventListener("click", () => {
-        modalContentWrapper.scrollTo( page.scrollWidth + 4,0);
+        modalContentWrapper.scrollTo(page.scrollWidth + 4, 0);
         configSecondPage();
     });
     if (Object.keys(selectedPizzas).length === 0) {
@@ -96,16 +109,42 @@ function configFirstPage() {
     } else {
         nextButton.removeAttribute("disabled");
     }
-
 }
 function configSecondPage() {
     const modalContentWrapper = document.querySelectorAll("#payment-modal .modal-content")[0];
-    const page = document.querySelectorAll("#payment-modal .modal-content div")[1];
-
+    const page = document.querySelectorAll("#payment-modal .modal-content > div")[1];
     createShowSelectedPizzaTable(page.querySelector("#pizza-result-table"))
+
+    const prevButton = page.querySelector(".prevButton")
+    prevButton.addEventListener("click", () => {
+        modalContentWrapper.scrollTo(0, 0);
+    })
+
+    const nextButton = page.querySelector(".nextButton")
+    nextButton.addEventListener("click", () => {
+        modalContentWrapper.scrollTo((page.scrollWidth + 4) * 2, 0);
+        // Automatically transition to fourth page after 5 seconds
+        
+        setTimeout(() => {
+            modalContentWrapper.scrollTo(page.scrollWidth * 3 + 12, 0);
+            configFourthPage();
+        }, 5000);
+        
+    })
+
 }
-function configThirdPage() {}
-function configFourthPage() {}
+function configThirdPage() {
+    const page = document.querySelectorAll("#payment-modal .modal-content > div")[2];
+
+}
+function configFourthPage() {
+    const page = document.querySelectorAll("#payment-modal .modal-content > div")[3];
+    const button = page.querySelector("button");
+    button.addEventListener("click", () => {
+    const modal = document.querySelector("#payment-modal");
+    modal.classList.remove("active");
+    })
+}
 
 
 
@@ -119,7 +158,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const button = document.querySelector("#order");
     button.addEventListener("click", () => {
         modal.classList.add("active");
-        modalContent.scrollTo(0,0);
+        modalContent.scrollTo(0, 0);
     })
 
     configFirstPage();
@@ -129,6 +168,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     //
     // creates the buttoms.
-    
+
 
 });

@@ -1,0 +1,116 @@
+
+#payment-modal{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+#payment-modal.active {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#payment-modal .modal-content {
+    position: relative;
+    width: 320px;
+    max-width: 560px;
+    height: 480px;
+    
+    
+
+    background-color: var(--background-color);
+    padding: 4px;
+    border-radius: 8px;
+
+    display: flex;
+    flex-wrap: nowrap;
+    flex-grow: 1;
+    overflow-x: hidden;
+    gap: 4px;
+
+    scroll-behavior: smooth;
+    scroll-snap-type: proximity;
+}
+
+#payment-modal .modal-content > div {
+    flex-shrink: 0;
+    flex-grow: 1;
+    flex-wrap: wrap;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: start;
+    justify-content: start;
+
+    position: relative;
+    overflow-x: hidden;
+
+    padding-block: 4px;
+
+}
+
+.modal-content article {
+    max-height: 420px;
+    overflow: auto;
+}
+
+.modal-content footer  {
+    position:relative;
+    border-top: 1px solid rgba(0, 0, 0, 0.384);
+}
+.modal-content button {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border: none;
+    text-align: center;
+    color: var(--background-color);
+    box-shadow: none;
+    background-color: var(--primary-color);
+
+}
+.modal-content button:hover {
+    background-color: var(--secondary-color);
+}
+.modal-content button:focus {
+    background-color: var(--accent-color);
+}
+.modal-content button[disabled="true"],
+.modal-content button:disabled {
+    background-color: #bfbfbf !important;
+}
+
+.flex.right.bottom {
+    width: 100%;
+    justify-content: space-between;
+    align-items: end;
+}
+
+.flex.center {
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.circled {
+    width: 32px;
+    height: 32px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: var(--secondary-color);
+}
+

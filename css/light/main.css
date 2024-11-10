@@ -1,16 +1,9 @@
 @import url("./reseter.css");
 @import url("./loader.css");
 @import url("./card.css");
-
-:root {
-    --primary-color: #652020;
-    --secondary-color: #e08585;
-    --accent-color: #bc2424;
-    --background-color: #fdfbfb;
-    --text-color: #090404;
+@import url("./modal.css");
 
 
-}
 body {
     background-color: var(--background-color);
     color: var(--text-color);
@@ -52,6 +45,23 @@ header h1 {
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
 }
 
+.flex {
+    display: flex;
+    flex-grow: 1;
+    justify-content: space-between;
+    padding-inline: 8px;
+    padding-block: 4px;
+
+}
+.right {
+    justify-content: end;
+    
+}
+.align-center {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+}
 
 button.order {
     display: flex;

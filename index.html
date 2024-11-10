@@ -72,19 +72,32 @@
                 </footer>
             
             </div>
-            <div class="summaryPage">
-                <article>
+            <div class="summaryPage flex">
+                <article style="height: 100%;">
                     <section id="pizza-result-table">
                         <div class="loader"></div>
                         <p>Loading pizzas...</p>
                     </section>
                 </article>
+                <footer class="flex right bottom">
+                    <button class="prevButton"><</button>
+                    <button class="nextButton">></button>
+                </footer>
             </div>
             <div class="paymentPage">
-                Payment
+                <article class="flex center"  >
+                    <span>
+                    <div class="loader payment"></div>
+                    </span>
+                    <p >Processing transaction...</p>
+                </article>
             </div>
             <div class="confirmationPage">
-                Wait for confirmation
+                <h3>Transaction sucessfull</h3>
+                <p>Your pizza is on the way.</p>
+                <p>well... not really...</p>
+
+                <button>Close</button>
             </div>
             
         </section>

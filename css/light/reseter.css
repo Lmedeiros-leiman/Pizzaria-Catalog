@@ -1,3 +1,13 @@
+:root {
+    --primary-color: #652020;
+    --secondary-color: #e08585;
+    --accent-color: #bc2424;
+    --background-color: #fdfbfb;
+    --text-color: #090404;
+
+
+}
+
 *{
     padding: 0;
     margin: 0;
